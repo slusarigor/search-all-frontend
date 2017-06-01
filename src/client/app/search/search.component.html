@@ -1,0 +1,18 @@
+<input
+        (input)="searchTerm$.next($event.target.value)"
+>
+
+<ul *ngIf="results">
+  <li *ngFor="let result of results">
+    <a routerLink="/category/{{ result.id }}">
+      {{ result.name }}
+    </a>
+    <ul *ngIf="result.items">
+      <li *ngFor="let tag of result.items">
+        <a routerLink="/tag/{{ tag.id }}">
+          {{ tag.name }}
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>

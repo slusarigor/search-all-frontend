@@ -1,0 +1,38 @@
+<div class="">
+    <div class='row'>
+        <div class="col-md-6">
+            <h1>Результат</h1>
+            <div *ngIf="category">
+                <h3>{{category.name}}</h3>
+                <div *ngIf="category.shops">
+                    <div class="card" *ngFor="let shop of category.shops">
+                        <div class="card-block">
+                            <h4 class="card-title">{{ shop.name }}</h4>
+                        </div>
+                    </div>
+
+                    <!--<div *ngFor="let shop of category.shops">-->
+                        <!--{{ shop.name }}-->
+                        <!--<ul *ngIf="shop.shop_addresses">-->
+                            <!--<li *ngFor="let address of shop.shop_addresses">-->
+                                <!--{{ address.address }} - -->
+                                <!--<span *ngFor="let phone of address.shop_phones">-->
+                                  <!--|{{phone.phone}}|-->
+                                <!--</span>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
