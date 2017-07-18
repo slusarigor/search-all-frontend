@@ -27,9 +27,22 @@
         </div>
 
         <div class="col-md-6">
-            <div>
+                <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="13">
+                    <sebm-google-map-marker
+                            *ngFor="let m of markers; let i = index"
+                            (markerClick)="clickedMarker(m.label, i)"
+                            [latitude]="m.lat"
+                            [longitude]="m.lng"
+                            [label]="m.label"
+                            [markerDraggable]="m.draggable"
+                            (dragEnd)="markerDragEnd(m, $event)">
 
-            </div>
+                        <sebm-google-map-info-window>
+                            <strong>{{m.info}}</strong>
+                        </sebm-google-map-info-window>
+
+                    </sebm-google-map-marker>
+                </sebm-google-map>
         </div>
 
     </div>

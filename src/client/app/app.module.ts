@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 // libs
+import { AgmCoreModule } from 'angular2-google-maps/core';
 import { HttpTransferModule } from '@ngx-universal/state-transfer';
 import { CacheModule } from '@ngx-cache/core';
 import { ConfigLoader, ConfigModule, ConfigService } from '@ngx-config/core';
@@ -69,6 +70,7 @@ export function translateFactory(platformId: any, http: Http): TranslateLoader {
     RouterModule.forRoot(routes),
     HttpModule,
     CacheModule.forRoot(),
+    AgmCoreModule.forRoot({apiKey: "AIzaSyBhP8NT6A8v5oTJ6S7enKrELl4iLywVhYI"}),
     ConfigModule.forRoot({
       provide: ConfigLoader,
       useFactory: (configFactory),
